@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: reference-new.html 
+keywords: 'what"s new, new, features, release notes, enhancements' 
+summary: O Cloud Volumes ONTAP 9.13.0 inclui uma nova melhoria. 
+---
+= Novidades do Cloud Volumes ONTAP 9.13.0
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+O Cloud Volumes ONTAP 9.13.0 inclui novos aprimoramentos.
+
+Recursos e aprimoramentos adicionais também são introduzidos nas versões mais recentes do BlueXP  (antigo Gerenciador de nuvem). Consulte https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Notas de versão do BlueXP"^] para obter detalhes.
+
+
+
+== 9.13.0 GA (5 de março de 2023)
+
+A versão de disponibilidade geral (GA) do Cloud Volumes ONTAP 9.13.0 já está disponível na AWS, Azure e Google Cloud. Esta versão inclui os seguintes novos recursos e aprimoramentos.
+
+
+
+=== Flash Cache e alta velocidade de gravação no Google Cloud
+
+Suporte para cache Flash, alta velocidade de gravação e uma unidade de transmissão máxima (MTU) alta de 8.896 bytes agora está disponível para instâncias selecionadas com a versão Cloud Volumes ONTAP 9.13.0.
+
+Saiba mais link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Configurações compatíveis por licença no Google Cloud"^]sobre o .
+
+
+
+=== Verificação de imagem no Google Cloud
+
+Recursos de segurança aprimorados agora estão disponíveis para verificar assinaturas de arquivos de imagem do Cloud Volumes ONTAP exportados pelo Google Cloud.
+
+link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-gcp-image-verification.html["Saiba mais sobre a Verificação de imagem do Google Cloud"^].
+
+
+
+=== Suporte a novas instâncias no Google Cloud
+
+As licenças freemium, PAYGO Premium, BYOL baseadas em nós e baseadas em capacidade agora são compatíveis com dois novos tipos de instância para implantações de nó único do Cloud Volumes ONTAP e de alta disponibilidade no Google Cloud.
+
+* n2-padrão-48
+* n2-padrão-64
+
+
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Saiba mais sobre as configurações compatíveis no Google Cloud"^].
+
+
+
+== Notas de atualização
+
+Leia estas notas para saber mais sobre a atualização para esta versão.
+
+
+
+=== Como atualizar
+
+As atualizações do Cloud Volumes ONTAP devem ser concluídas a partir do BlueXP . Você não deve atualizar o Cloud Volumes ONTAP usando o Gerenciador de sistema ou a CLI. Isso pode afetar a estabilidade do sistema.
+
+link:http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html["Saiba como atualizar quando o BlueXP  o notificar"^].
+
+
+
+=== Caminho de atualização suportado
+
+Você pode atualizar para o Cloud Volumes ONTAP 9.13.0 a partir da versão 9.12.1. A BlueXP  solicitará que você atualize os sistemas Cloud Volumes ONTAP qualificados para esta versão.
+
+
+
+=== Versão necessária do conetor
+
+O conetor BlueXP  deve estar executando a versão 3.9.26 ou posterior para implantar novos sistemas Cloud Volumes ONTAP 9.13.0 e atualizar os sistemas existentes para o 9.13.0.
+
+
+TIP: As atualizações automáticas do conetor são ativadas por padrão, portanto, você deve estar executando a versão mais recente.
+
+
+
+=== Tempo de inatividade
+
+* A atualização de um sistema de nó único leva o sistema off-line por até 25 minutos, durante os quais a e/S é interrompida.
+* A atualização de um par de HA não causa interrupções e e/S é ininterrupta. Durante esse processo de atualização sem interrupções, cada nó é atualizado em conjunto para continuar fornecendo e/S aos clientes.
+
+
+
+
+=== as instâncias c4, m4 e r4 não são mais compatíveis
+
+Na AWS, os tipos de instância C4, M4 e R4 EC2 não são mais compatíveis com o Cloud Volumes ONTAP. Se você tiver um sistema existente que esteja sendo executado em um tipo de instância C4, M4 ou R4, será necessário alterar para um tipo de instância na família de instâncias C5, M5 ou R5. Não é possível atualizar para esta versão até alterar o tipo de instância.
+
+link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html["Saiba como alterar o tipo de instância EC2 para Cloud Volumes ONTAP"^].
+
+link:https://mysupport.netapp.com/info/communications/ECMLP2880231.html["Suporte à NetApp"^]Consulte para saber mais sobre o fim da disponibilidade e suporte para esses tipos de instância.
